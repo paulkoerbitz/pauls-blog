@@ -1,0 +1,10 @@
+{{> head }}
+
+<h1 class="title">{{ title }}</h1>
+<p class="date">published on {{#formatDate date}}{{/formatDate}}</p>
+
+{{{ contents }}}
+
+{{> disqus }}
+
+{{> foot }}
