@@ -5,6 +5,7 @@ const assets = require('metalsmith-static');
 const permalinks = require('metalsmith-permalinks');
 const collections = require('metalsmith-collections');
 const helpers = require('metalsmith-register-helpers');
+const codeHighlight = require('metalsmith-code-highlight');
 // var paths = require('metalsmith-paths');
 // var partials = require('metalsmith-discover-partials');
 
@@ -40,6 +41,7 @@ const ms = Metalsmith(__dirname)
     ]))
     .use(removeDrafts)
     .use(markdown())
+    .use(codeHighlight())
     .use(collections({          // group all blog posts by internally
         posts: {
             pattern: '*posts/*',

@@ -193,3 +193,15 @@ div.info {
     font-size: 14px;
     font-style: italic;
 }
+
+code.hljs {
+    display: inline;
+    padding: 0;
+    background: inherit;
+}
+
+pre > code.hljs {
+    display: block;
+    padding: 0.5em;
+    background: #19171c;
+}
