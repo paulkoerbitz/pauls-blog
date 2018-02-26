@@ -1,12 +1,12 @@
 ---
 title: Announcing typeful-redux
 summary: A type-safe, low boilerplate redux wrapper for TypeScript
-date: 2018-02-18
+date: 2018-02-26
 ---
 
 I am proud to announce the publication of [typeful-redux], a fully
-type-safe, low boilerplate redux wrapper. To my knowledge, this is
-the first redux wrapper which achieves end-to-end type safety. In
+type-safe, low boilerplate redux wrapper for TypeScript. To my knowledge,
+this is the first redux wrapper which achieves end-to-end type safety. In
 particular, the `dispatch` function / object is fully typed, and
 these types are maintained when using [react-redux]'s `connect`
 function to connect a component to a redux store.
@@ -37,7 +37,12 @@ const store = new StoreBuilder()
     .addReducer('todos', TodoReducer)
     .addMiddleware(reduxLogger) // as example
     .build();
+```
 
+Both the `getState` function and all functions on the `dispatch` object
+are now fully typechecked - using them incorrectly will trigger a type error:
+
+```TypeScript
 // The result has type: { todos: TodoItem[] }
 const state = store.getState();
 
@@ -47,7 +52,10 @@ const state = store.getState();
 store.dispatch.todos.clear();
 
 // Dispatches
-// { type: 'todos/add', payload: { completed: false, task: 'Provide a fully type-safe interface to redux' } }
+// { type: 'todos/add',
+//   payload: { completed: false,
+//              task: 'Provide a fully type-safe interface to redux' }
+// }
 store.dispatch.todos.add({
     task: 'Provide a fully type-safe interface to redux',
     completed: false
@@ -56,6 +64,11 @@ store.dispatch.todos.add({
 // Dispatches { type: 'todos/toggle', payload: 0 }
 store.dispatch.todos.toggle(0);
 ```
+
+In addition, [typeful-redux] also provides a typesafe wrapper for
+[react-redux]'s `connect` method. This means that any type mismatch
+when connecting a component to a store will be detected and produce
+a type error.
 
 A very simple, runnable example app can be found [here][todomvc-example]. A TodoMVC implementation with slightly more features is availabe [here][simpletodo-example].
 
@@ -91,7 +104,7 @@ Besides these differences and different surface appearence, typeful-redux **is n
 
 ## Overview over the library
 
-[typeful-redux] exports two functions and one class (and a few supporting type definitions). The purpose of the functions is described here. Also see the [examples](./examples/) for example usages. If you find the documentation insufficient please file an issue or complain to me via email (see profile).
+[typeful-redux] exports two functions and one class (and a few supporting type definitions). The purpose of the functions is described here. Also see the [examples] for example usages. If you find the documentation insufficient please file an issue or complain to me via email.
 
 ### `createReducer`
 
@@ -174,14 +187,73 @@ The type of `store.dispatch.todos` is
 Each method dispatches the right action on the store with the passed argument
 as the payload. Actions are namespaced - so `store.dispatch.toggle(0)` dispatches
 a `{ type: 'todos/toggle', payload: 0 }` action. This means that action types no
-longer have to be globally unique - they just have to be unique for their reducer
-and enables using the same reducer for multiple parts of the store.
+longer have to be globally unique - they just have to be unique for their reducer.
+This enables using the same reducer for multiple parts of the store.
 
 
 ### `connect`
 
-This is a re-export of the redux connect function, with a more restricted type to ensure that the typing of the `dispatch` object is known
-in the `mapDispatchToProps` function. This makes it possible to *propagate type errors through `connect`*, which is not possible with the current type definition of [react-redux]'s `connect`.
+This is a re-export of the redux connect function, with a more restricted type to ensure that the typing of the `dispatch` object is known in the `mapDispatchToProps` function. This makes it possible to *propagate type errors through `connect`*, which is not possible with the current type definition of [react-redux]'s `connect`.
+
+To explain how `connect` can be used to its full benefit, we must understand the type
+of the produced `store`. In general `store` will have the following type:
+
+```TypeScript
+type Store<STATE, DISPATCH> = {
+    getState(): STATE;
+    subscribe(): void;
+    dispatch: DISPATCH;
+};
+```
+
+where `STATE` is a map from the reducer names (here: `todos`) and the state types and
+`DISPATCH` is a map from the reducer names (again `todos`) to functions which dispatch
+the respective actions.
+
+Now the `connect` function is set up so given a `mapStateToProps` which accepts a `STATE`
+and a `mapDispatchToProps` which accepts a `DISPATCH`, it produces a container which needs
+to have a `{ store: Store<STATE, DISPATCH>; }` as part of properties. This way the types
+from the store can be propagated all the way to the components and changing the type
+of an action-reducer triggers a type-error in all the right places.
+
+```TypeScript
+interface State {
+    todos: TodoItem;
+}
+
+interface Dispatch {
+    todos: {
+        add(description: string): void;
+        clear(): void;
+        toggle(index: number): void;
+    };
+}
+// Let's say we have a `TodoListComponent` which wants the following
+// properties
+interface TodoListProps = {
+    todos: TodoItem;
+    add(description: string): void;
+    clear(): void;
+    toggle(index: number): void;
+}
+
+class TodoListComponent extends React.Component<TodoListProps> {
+    // ...
+}
+
+const mapStateToProps = (state: State) => state;
+const mapDispatchToProps = (dispatch: Dispatch) => dispatch.todos;
+
+
+// TodoListContainer is infered to have a type which requires a property
+// `{ store: Store<State, Dispatch> }`
+//
+const TodoListContainer = connect(mapStateToProps, mapDispatchToProps)(TodoListComponent);
+```
+
+`connect` can also be used with `mapStateToProps` and `mapDispatchToProps` with
+a second argument, these second arguments become part of the required properties
+of the connected container.
 
 ## How does it all work?
 
@@ -192,4 +264,5 @@ In the [next post][next-post], we'll explore in more depth how [typeful-redux] i
 [typeful-redux]: https://github.com/paulkoerbitz/typeful-redux
 [todomvc-example]: https://github.com/paulkoerbitz/typeful-redux/tree/master/examples/todomvc
 [simpletodo-example]: https://github.com/paulkoerbitz/typeful-redux/tree/master/examples/simple-todo
+[examples]: https://github.com/paulkoerbitz/typeful-redux/tree/master/examples/
 [next-post]: ./typeful-redux-internals
