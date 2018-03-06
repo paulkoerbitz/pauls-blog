@@ -13,7 +13,7 @@ I want to take a closer look at these tricks.
 ## The Goal
 
 Before looking at how [typeful-redux] leverages TypeScript's type system,
-it is instructive to consider what the actual goal is. typeful-redux wants to
+it is instructive to consider what the actual goal of the library is. typeful-redux wants to
 
   - give a fully type-safe redux wrapper, meaning that the type of the created
     store must be as informative as possible. That means in particular that the
@@ -22,21 +22,20 @@ it is instructive to consider what the actual goal is. typeful-redux wants to
 
   - reduce the boilerplate required to configure actions and reducers.
 
-The type of the store looks as follows. `Store` and `Dispatch` are
-the generic type parameters that we want to fill out with the *right* type:
+The type of the store looks as follows. `STORE_STATE` and `STORE_DISPATCH` are
+the generic type parameters that we want to fill out with the *right* types:
 
 ```TypeScript
-type Store<State, Dispatch> {
-    getState(): State;
-    dispatch: Dispatch;
+type Store<STORE_STATE, STORE_DISPATCH> {
+    getState(): STORE_STATE;
+    dispatch: STORE_DISPATCH;
     // I'll leave this out going forward because it is boring
     subscribe(() => void): () => void;
 }
 ```
 
-As an example, if we create a store with a single reducer that gets
-a *namespace* of `todos` and, has state `TodoItem[]` and actions
-`add`, `clear` and `toggle`, the full store type will look as follows:
+As an example, if we create a store with a single reducer that we give the name `todos` and has state `TodoItem[]` and the single action
+`add`, the full store type will look as follows:
 
 ```TypeScript
 interface TodoItem {
@@ -44,14 +43,11 @@ interface TodoItem {
     completed: boolean;
 }
 
-// Create a new reducer with initial state [], then add three actions
+// Create a new reducer with initial state [] and action 'add'
 const TodoReducer = createReducer([] as TodoItem[])
-    ('clear', s => [])
-    ('add', (s, newItem: TodoItem) => [...s, newItem])
-    ('toggle', (s: TodoItem[], index: number) => [
-        ...s.slice(0, i),
-        { ...s[i], completed: !s[i].completed },
-        ...s.slice(i + 1)
+    ('add', (s, payload: string) => [
+        ...s,
+        { task: payload, completed: false }
     ]);
 
 // Create the store
@@ -67,77 +63,79 @@ type StoreType = {
     };
     dispatch: {
         todos: {
-            add(taskName: string): void;
-            clear(): void;
-            toggle(taskId: number): void;
+            add(payload: string): void;
         }
     }
 };
 ```
 
+So in this case `STORE_STATE` should be inferred to be `{ todos: TodoItem[]; }`
+and `STORE_DISPATCH` should be inferred to be
+
+```TypeScript
+todos: {
+    add(payload: string): void;
+}
+```
+
 ## Giving `getState()` the Right Type
 
 Let's start with a look at how we can give `getState()` the right
-type as this is a bit easier but essentially leverages the same
-tricks as getting the `dispatch` object to look right. While pulling
-out the types from the library, I'll leave off parts which are not
+type. This is easier than getting the `dispatch` object to look right
+but it leverages the same tricks, so it's a good place to start. While
+pulling out the types from the library, I'll leave off parts which are not
 relevant for the current discussion to make following a bit easier.
 
 The first part is pretty simple: the `createReuducer` function takes
 an initial state and returns a `Reducer` which has a `getInitial()`
-methods that returns this state. So basically the state parameter `S`
-flows right through `createReducer`.
+method that returns this state. So basically the state parameter `REDUCER_STATE` flows right through `createReducer`.
 
 ```TypeScript
-type Reducer<S, /* ... */> = {
-    getInitial(): S;
+type Reducer<REDUCER_STATE, /* ... */> = {
+    getInitial(): REDUCER_STATE;
     // ...
 };
 
-const createReducer = <S>(s: S): Reducer<S> => {
-    // ...
-};
+const createReducer =
+    <REDUCER_STATE>(s: REDUCER_STATE): Reducer<REDUCER_STATE> => {
+        // ...
+    };
 
 ```
 
-Next comes the `StoreBuilder` which takes a `Reducer` and a name
-storing it internally until its `build` method is invoked which
-creates the store.
+Next comes the `StoreBuilder` which takes a `Reducer` and a `reducerName`
+under which the reducer's state and dispatch functions will become
+availabe once the store is created via the `build` method:
 
 ```TypeScript
-class StoreBuilder<X = {}, /* ... */> = {
-    addReducer<R extends string, S, /* ... */>(
-        reducerName: R,
-        reducerBuilder: Reducer<S, /* ... */>
-    ): StoreBuilder<X & { [r in R]: S }, /* ... */>
+class StoreBuilder<STORE_STATE = {}, /* ... */> = {
+    addReducer<REDUCER_NAME extends string, REDUCER_STATE, /* ... */>(
+        reducerName: REDUCER_NAME,
+        reducerBuilder: Reducer<REDUCER_STATE, /* ... */>
+    ): StoreBuilder<STORE_STATE & { [name in REDUCER_NAME]: REDUCER_STATE }, /* ... */>
 
-    build(): Store<X, /* ... */>;
+    build(): Store<STORE_STATE, /* ... */>;
 }
 ```
 
 Here things become a little more interesting: `StoreBuilder` has a
-type parameter `X` which is the type of full store state. We can
-see this because it is the first type parameter to `Store` which
-`build` returns.
+type parameter `STORE_STATE` which tracks the state of the store.
+We can see this because it is the first
+type parameter to `Store` which `build` returns.
 
 Now comes the first trick: When another reducer is added, `addReducer` takes
 the `reducerName` (in the example above, this is `'todos'`) for which it
-infers the type `R` which is a subtype of `string`. Specifying the type
-parameter in this way, `R` will be infered to be the string itself. So
-if we call `.addReducer('todos', TodosReducer)`, then `R` is inferred to be
-the type `'todos'`. This will be useful in a minute.
+infers the type `REDUCER_NAME` which is a subtype of `string`. Specifying the type parameter in this way, `REDUCER_NAME` will be inferred to be the string itself. So if we call `addReducer('todos', TodosReducer)`, then `REDUCER_NAME` is inferred to be the type `'todos'`. This will be useful in a minute.
 
 The second trick is to extract the type of the state from the `Reducer`. This
-is realtively easy, `addReducer` has a second type parameter `S` which is
-the first type parameter to `Reducer`, this way `S` will be infered to the
-type of the `Reducer`'s state.
+is realtively easy, `addReducer` has a second type parameter `REDUCER_STATE` which is the first type parameter to `Reducer`, this way `REDUCER_STATE` will be inferred to the type of the `Reducer`'s state.
 
 The third trick now brings these things together by returning a `StoreBuilder`
-with a new type. The type parameter `X` of `StoreBuilder` now becomes
-`X & { [r in R]: S }`. As stated above `R` will have been inferred to the
-`reducerName` and `S` to the state type of the reducer. Thus `{ [r in 'todos']: S }`
-is basically `{ todos: S }` and intersecting the *state type so far* (`X`) with
-basically means *give `X` also the property `'todos'` with type `S`*.
+with a new type. The type parameter `STORE_STATE` of `StoreBuilder` now becomes
+`STORE_STATE & { [name in REDUCER_NAME]: REDUCER_STATE }`. As stated above `REDUCER_NAME` will have been inferred to the
+`reducerName` and `REDUCER_STATE` to the state type of the reducer. Thus `{ [name in 'todos']: REDUCER_STATE }`
+is basically `{ todos: REDUCER_STATE }` and intersecting the *store state type so far* (`STORE_STATE`) with `{ todos: REDUCER_STATE }`
+basically means *give `STORE_STATE` also the property `'todos'` with type `REDUCER_STATE`*.
 
 By combining these methods as described above we can extend the state parameter
 with each `addReducer` call so that we can always give `getState()` the right
@@ -152,40 +150,38 @@ go through one more level of indirection.
 
 Let's go back to `Reducer` and `createReducer` where we have left of the most
 interesting parts. A more complete type of `Reducer` looks as follows (I still
-leave of some parts for clarity, but there are no type tricks involved there,
+leave off some parts for clarity, but there are no type tricks involved there,
 they are just there for convenience, so we're not missing anything by not
 discussing them):
 
 ```TypeScript
-type Reducer<STATE, DISPATCH = {}> = {
+type Reducer<REDUCER_STATE, REDUCER_DISPATCH = {}> = {
     // for adding setters, these are actions without a payload
-    <K extends string>(
-        name: K,
-        handler: (state: STATE) => STATE
-    ): Reducer<STATE, DISPATCH & Dispatch0<K>>;
+    <HANDLER_NAME extends string>(
+        name: HANDLER_NAME,
+        handler: (state: REDUCER_STATE) => REDUCER_STATE
+    ): Reducer<REDUCER_STATE, REDUCER_DISPATCH & Dispatch0<HANDLER_NAME>>;
 
     // for adding handlers, these are actions with a payload
-    <K extends string, PAYLOAD>(
-        name: K,
-        handler: (state: STATE, payload: PAYLOAD) => STATE
-    ): Reducer<STATE, DISPATCH & Dispatch1<K, PAYLOAD>>;
+    <HANDLER_NAME extends string, PAYLOAD>(
+        name: HANDLER_NAME,
+        handler: (state: REDUCER_STATE, payload: PAYLOAD) => STATE
+    ): Reducer<REDUCER_STATE, REDUCER_DISPATCH & Dispatch1<HANDLER_NAME, PAYLOAD>>;
 
     // ...
 };
 
-type Dispatch0<K extends string> = {
-    [k in K]: { (): void; }
+type Dispatch0<HANDLER_NAME extends string> = {
+    [name in HANDLER_NAME]: { (): void; }
 };
 
-type Dispatch1<K extends string, P> = {
-    [k in K]: { (x: P): void; }
+type Dispatch1<HANDLER_NAME extends string, PAYLOAD> = {
+    [name in HANDLER_NAME]: { (payload: PAYLOAD): void; }
 };
 ```
 
-So we see that `Reducer` has two generic type parameter:
-`STATE` is the type of the state as we have seen previously and `DISPATCH`
-is the final type of the dispatch functions that we are interested in (this is
-what `StoreBuilder` will use to assemble the type of the dispatch object).
+So we see that `Reducer` has two generic type parameters:
+`REDUCER_STATE` is the type off the state as we have seen previously and `REDUCER_DISPATCH` is the final type of the dispatch functions that we are interested in (this is what `StoreBuilder` will use to assemble the type of the dispatch object).
 
 There are two different call signatures, the first one is for adding
 actions which don't need a payload (I call them `setters` here) and the
@@ -196,32 +192,30 @@ it is necessary to have two different signatures.
 Let's focus on the second signature, as both work essentially the same
 way. Really what we are doing here is we're using the same trick as when
 building up the full store state type to build up the type of the dispatch
-functions on this reducer. As an example, let's say we call the `Reducer`
-with the following parameters:
+functions on this reducer. So let's look again at our example of creating
+a really simple reducer:
 
 ```TypeScript
 const TodoReducer = createReducer([] as TodoItem[])
-    ('add', (s: TodoItem[], todoName: string) => /* ... */)
+    ('add', (s: TodoItem[], payload: string) => /* ... */)
 ```
 
-so `name` is `'add'`, `STATE` is `TodoItem[]` and `PAYLOAD` is `string`.
-As before, the type parameter `K` will be inferred to be just `'add'`. We
-then return a `Reducer<STATE, DISPATCH & Dispatch<K, PAYLOAD>>`, substituting
-the parameters `STATE = TodoItem[]`, `DISPATCH = {}`, `K = 'add'` and `PAYLOAD = string` we get
+so `name` is `'add'`, `REDUCER_STATE` is `TodoItem[]` and `PAYLOAD` is `string`. As before, the type parameter `HANDLER_NAME` will be inferred to be just `'add'`. We then return a `Reducer<REDUCER_STATE, REDUCER_DISPATCH & Dispatch1<HANDLER_NAME, PAYLOAD>>`, substituting
+the parameters `REDUCER_STATE = TodoItem[]`, `REDUCER_DISPATCH = {}`, `HANDLER_NAME = 'add'` and `PAYLOAD = string` we get
 
 ```TypeScript
-Reducer<STATE, DISPATCH & Dispatch<K, PAYLOAD>>
-= Reducer<TodoItem[], {} & Dispatch<'add', string>>
-= Reducer<TodoItem[], {} & { [k in 'add']: { (x: string): void } }>
-= Reducer<TodoItem[], { [k in 'add']: { (x: string): void } }>
-= Reducer<TodoItem[], { add: { (x: string): void } }>
-= Reducer<TodoItem[], { add(x: string): void; }>
+Reducer<REDUCER_STATE, REDUCER_DISPATCH & Dispatch1<HANDLER_NAME, PAYLOAD>>
+= Reducer<TodoItem[], {} & Dispatch1<'add', string>>
+= Reducer<TodoItem[], {} & { [name in 'add']: { (payload: string): void } }>
+= Reducer<TodoItem[], { [name in 'add']: { (payload: string): void } }>
+= Reducer<TodoItem[], { add: { (payload: string): void } }>
+= Reducer<TodoItem[], { add(payload: string): void; }>
 ```
 
-So now the `DISPATCH` type parameter is `{ add(x: string): void; }`, thus
+So now the `DISPATCH` type parameter is `{ add(payload: string): void; }`, thus
 a single function with name `add` that accepts a `string` and returns `void`.
 It might be instructive to run through these substitutions one more time
-with a second handler, but I'll leave this as an exercise to the reader.
+with a second handler.
 
 Let's instead look at how `StoreBuilder` uses this information to build up
 the type of the full dispatch object. Going back to this definition,
@@ -229,11 +223,14 @@ we'll see that `StoreBuilder` also has a second type parameter which
 is the type of the dispatch object.
 
 ```TypeScript
-class StoreBuilder<X = {}, Y = {}> {
-    public addReducer<R extends string, S, YY>(
-        reducerName: R,
-        reducerBuilder: Reducer<S, YY>
-    ): StoreBuilder<X & { [r in R]: S }, Y & { [r in R]: YY }> {
+class StoreBuilder<STORE_STATE = {}, STORE_DISPATCH = {}> {
+    public addReducer<REDUCER_NAME extends string, REDUCER_STATE, REDUCER_DISPATCH>(
+        reducerName: REDUCER_NAME,
+        reducerBuilder: Reducer<REDUCER_STATE, REDUCER_DISPATCH>
+    ): StoreBuilder<
+        STORE_STATE & { [name in REDUCER_NAME]: REDUCER_STATE },
+        STORE_DISPATCH & { [name in REDUCER_NAME]: REDUCER_DISPATCH }
+    > { /* ... */ }
 ```
 
 Looking at the `addReducer` method again, we see that `StoreBuilder`
@@ -242,20 +239,29 @@ object as it uses for the type of the store state. Using the `Reducer`
 from above, let's look at how the types get inferred in this example
 
 ```TypeScript
-// TodoReducer has type Reducer<TodoItem[], { add(x: string): void; }>
+// TodoReducer has type Reducer<TodoItem[], { add(payload: string): void; }>
 
 new StoreBuilder()
     .addReducer('todos', TodoReducer)
 ```
 
-Recall that `R` is inferred to be `'todos'`, `S` is inferred as `TodoItem[]`
-and `YY` is inferred as `{ add(x: string): void; }`. The resulting
+Recall that `REDUCER_NAME` is inferred to be `'todos'`, `REDUCER_STATE` is inferred as `TodoItem[]`
+and `REDUCER_DISPATCH` is inferred as `{ add(x: string): void; }`. The resulting
 `StoreBuilder` type will thus be
 
 ```TypeScript
-StoreBuilder<{} & { [r in R]: S }, {} & { [r in R]: YY }>
-= StoreBulider<{ [r in 'todos']: TodoItem[] }, { [r in 'todos']: { add(x: string): void; } }>
-= StoreBulider<{ todos: TodoItem[] }, { todos: { add(x: string): void; } }>
+StoreBuilder<
+    {} & { [name in REDUCER_NAME]: REDUCER_STATE },
+    {} & { [name in REDUCER_NAME]: REDUCER_DISPATCH }
+>
+= StoreBulider<
+    { [name in 'todos']: TodoItem[] },
+    { [name in 'todos']: { add(payload: string): void; } }
+>
+= StoreBulider<
+    { todos: TodoItem[] },
+    { todos: { add(payload: string): void; } }
+>
 ```
 
 When invoking the `build` method, we will get a store with the following type
