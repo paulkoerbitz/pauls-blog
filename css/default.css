@@ -53,49 +53,6 @@ pre, code, tt   { font-family: 'Ubuntu Mono', 'Consolas', 'Deja Vu Sans Mono',
                   /*border-radius: 10px;*/
                   /*padding: 5px;*/
                 }
-/* pre             { line-height: 1.3; background: none; { /*padding: 0; }*/
-/* code, tt        { baeckground: #eee; } */
-
-/* code formatting, pandoc */
-/*
-pre, code, tt { background: #303030;
-                color: #FEFFFD;
-              }
-*/
-/*span.ot { color: #3C7297; }*/ /* function types, language directives */
-/*span.kw { color: #84BE9C; }*/ /* keyword */
-/*span.dt { color: #8BFC2F; }*/ /* types   */
-/*span.fu { color: #FCA81B; }*/ /* symbols */
-/*span.st { color: #F58C02; }*/ /* string  */
-/*span.co { color: #3D7B9A; }*/ /* comment */
-
-pre {
-    background-color: #FDF6E3
-}
-
-/* KeyWordTok */
-span.kw { color: #268BD2; }
-/* DataTypeTok */
-span.dt { color: #268BD2; }
-
-/* DecValTok (decimal value), BaseNTok, FloatTok */
-span.dv, span.bn, span.fl { color: #D33682; }
-/* CharTok */
-span.ch { color: #DC322F; }
-/* StringTok */
-span.st { color: #2AA198; }
-/* CommentTok */
-span.co { color: #93A1A1; }
-/* OtherTok */
-span.ot { color: #A57800; }
-/* AlertTok */
-span.al { color: #CB4B16; font-weight: bold; }
-/* FunctionTok */
-span.fu { color: #268BD2; }
-/* RegionMarkerTok */
-span.re { }
-/* ErrorTok */
-span.er { color: #D30102; font-weight: bold; }
 
 
 /* tables */
@@ -122,6 +79,22 @@ div.entry-overview div.summary p    { margin: 0; padding: 0; }
 div.entry-overview div.detail       { margin-left: 190px; }
 div.entry-overview div.date         { float: left; width: 170px; color: #0099FF;
                                       text-align: right; font-size: 14px; }
+@media screen and (max-width: 750px) {
+    div.entry-overview {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    div.entry-overview div.date {
+        float: none;
+        color: #0099FF;
+        text-align: left;
+        font-size: 14px;
+    }
+    div.entry-overview div.detail       {
+        margin-left: 0px;
+    }
+}
+
 div.entry-overview h1               { font-weight: normal; }
 div.entry-overview h1:after         { content: " —"; }
 
