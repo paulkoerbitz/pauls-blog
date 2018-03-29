@@ -65,6 +65,10 @@ const ms = Metalsmith(__dirname)
         dest: '../build/assets'
     }))
     .use(assets({
+        src: '../images',
+        dest: '../build/images'
+    }))
+    .use(assets({
         src: '../css',
         dest: '../build/css'
     }))
