@@ -58,7 +58,7 @@ set_local $x
 ```
 
 Interestingly, the web assembly text format can also nest these
-instructions and wrap them in parenthese. This is just syntactic
+instructions and wrap them in parentheses. This is just syntactic
 sugar for the stack format shown above, but it does make things more
 readable:
 
@@ -87,7 +87,7 @@ wanted to create 20 years ago ;).
 
 Now that we've taken a first look at how WebAssembly looks, let's
 take on something slightly more difficult by writing the Fibonacci
-function in WebAssembly. To compute then n-th Fibonacci number, we will
+function in WebAssembly. To compute the n-th Fibonacci number, we will
 simply loop over the Fibonacci numbers starting from the first two and
 compute the next number by adding the last two. Here is how this would
 look in JavaScript:
@@ -192,19 +192,18 @@ of the `block` next:
 ```
 
 Now we have the conditional branch which checks if we should break out
-of the loop or continue. The first argument is the index of the block
+of the loop. The first argument is the index of the block
 or loop that the branch instruction targets. In our case `br_if 0` would
 target the `loop` and `br_if 1` targets the `block`. So the index basically
-says _"to which blocks should I jump?"_. By nesting the control flow targets
+says _to which nested control-flow instruction the br jumps_. By nesting the control flow targets
 and then targeting them with an index in a `br`, WebAssembly enforces the
-well-formedness of branch instructions so that we can't just jump to any label. So here `br_if 1` will branch to the end of the `(block` if the condition is true (because blocks establish a branch target at their end
-as explained above). The condition that is being checked is `(i32.le_s (get_local $n) (i32.const 2))` where `i32.le_s` is a signed less-or-equal
+well-formedness of branch instructions so that we can't just jump to any label. The index starts at `0`, so a `0` would target the `loop` and a `1` targets the `block`. So here `br_if 1` will branch to the end of the `block` if the condition is true (because blocks establish a branch target at their end as explained above). The condition that is being checked is `(i32.le_s (get_local $n) (i32.const 2))` where `i32.le_s` is a signed less-or-equal
 comparison of `$n` and `2`, so basically `$n <= 2`. Now it is hopefully
-also clear why we need the `block` instruction before the `loop`: we need
+ clear why we need the `block` instruction before the `loop`: we need
 a branch target to jump out of the loop, so we need a branch target outside
 of the `loop` and the `block` is just that.
 
-The next instructions simply update `$curr`, `$last` and the `$n` similar
+The next instructions simply update `$curr`, `$last` and `$n` similar
 to how this was done in our JavaScript version:
 
 ```WAT
@@ -298,10 +297,21 @@ src$ node index.js
 ```
 
 Tada! It works! If you want to see the full code check out this
-[mini-repo on GitHub]
+[mini-repo on GitHub].
+
+## Conclusion
+
+In this post we took a brief look at writing a pretty simple function
+in WebAssembly. While WebAssembly is of course a compile target and
+will rarely be written by hand, I found it very encouraging that simple
+things are in fact pretty simple. Even though WebAssembly does have a few
+more advanced features such as indirect branches and calls and memory
+handling, I'm now pretty confident that it is possible to learn this
+language pretty quickly.
 
 
 [WebAssembly]: https://webassembly.github.io/spec/core/index.html
 [Wrtiting WebAssembly by Hand]: https://blog.scottlogic.com/2018/04/26/webassembly-by-hand.html
 ["JavaScript" port of wabt]: https://www.npmjs.com/package/wabt
 [mini-repo on GitHub]: https://github.com/paulkoerbitz/wasm-first-steps
+[WebAssembly Binary Toolkit]: https://github.com/WebAssembly/wabt
