@@ -115,9 +115,101 @@ can be high even for a single project.
 
 ## Principle 2: Focus
 
+There are three aspects of focus: starting, sustaining, and optimizing
+the quality of one's focus.
+
+### Problem 1: Failing to Start Focusing (aka Procrastination)
+
+Procrastination is obviously a problem. Two tips in this book about how
+to handle it (a) start very small, e.g. by working for five minutes on a
+topic, then graduating to pomodoros, etc. and (b) become conscious why
+you're starting to procrastinate, which can be (b-i) because of aversion
+of the task for some reason (what?) and (b-ii) because of attraction to
+some other task (what and why?).
+
+### Problem 2: Failing to Sustain Focus (aka Getting Distracted)
+
+**Flow** is nice, but ultralearning, just like deliberate practice, might
+be too hard for it sometimes. Don't worry too much about it.
+
+**How long** should you practice? Going too long isn't optimal, 50 minutes
+to one hour is best, so if multiple hours for study taking some breaks is
+probably optimal. Also, learning idfferent subjects / aspects during this
+time might be good, but too many different things is not.
+
+### Distraction Sources:
+
+1. **Your environment**: Phone, internet, people interrupting, TV, games,
+    noises sounds. Optimize environment to help sustain focus.
+2. **Your task**: Some tasks are easier to focus on, e.g. watching video
+    might (or not?) be easier to focus on than reading. If something is more
+    cognitive demanding, than it is generally easier to focus on.
+3. **Your mind**: Can generate a lot of distractions, especially if it is
+    filled with strong emotions. Major life crisis can make focus a lot
+    harder, so dealing with these things first might be better.
+
+### Problem 3: Creating the Right Kind of Focus
+
+Two interesting variables: arousal and task complexity. For low complex
+tasks, relatively high arousal is good, while too high arousal makes it too
+easy to get distracted. For highly complex tasks (e.g. math), a bit
+lower arousal and more relaxed focus is better.
+
+If stuck on a very complex task, no focus, i.e. taking a break, can be best
+for the unconscious mind to come up with a solution.
+
+### Improve Your Ability to Focus
+
+Recognize where you are and try to improve in small steps.
+
+Personal observation: Motivation helps a lot with focus. If I am very eager
+to perform a task, I can focus well. Probably links strongly to the
+Procrastination Equation.
+
+
 ## Principle 3: Directness
 
-## Principle 4: Metalearning
+### The problem with Transfer
+
+It has been shown many times, initially by Edward Thorndike and
+Robert Woodworth in 1901 (*"The Influence of Improvement in One
+Mental Function upon the Efficiency of Other Functions"*) that
+transfer from one learned skill is problematic and often does not
+ocurr anywhere near the degree that people hope.
+
+### Overcoming the Problem of Transfer with Directness
+
+**Directness**, i.e. learning by doing or focusing directly on the
+skill you want to perform during your learning overcomes the problems
+with transfer in two ways: first, by focusing on the skill directly,
+the need for transfer is significantly diminished. Second, by focusing
+on the real world applicability, many subtle skills that *do transfer*
+which are needed for real world application of the skill are also learned
+and these are more likely to transfer to other situations.
+
+### How to Learn Directly
+
+**Direct learning is hard**, it is often more frustrating, challenging and
+intense than reading a book or sitting through a lecture, this is a source
+of a **competitive advantage**.
+
+Some tactics for direct learning:
+
+1. **Project based learning**: Opt for projects which produce something - at
+    least you will learn how to produce that thing! Can also be producing a
+    paper, book, online course, etc.
+2. **Immersive learning**: Surround yourself with the target environment in
+    which the skill is practiced. Obvious for languages, but applicable much
+    more widely.
+3. **Flight simulator method**: When practicing the skill is not possible
+    directly (flying, surgery, ...), a simulation which requires the same
+    cognitive skills (decisions, use knowledge).
+4. **The overkill approach**: Increase the difficulty of the challenge by
+    creating more intense versions of the taks than you actually want to
+    perform (e.g. speaking in front of middleschoolers, who pull no punches).
+
+
+## Principle 4: Drill
 
 ## Principle 5: Metalearning
 
