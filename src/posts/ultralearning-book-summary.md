@@ -395,7 +395,52 @@ forgetting:
     useful to remember anymore.
 
 
-## Principle 8: Intuition
+## Principle 8: Intuition: Go Deep Before Building Up
+
+### Story: Richard Feynman
+
+This chapter starts with a story about Richard Feynman, the famous
+physicist. It explains how Feynman's in-depth understanding of
+Mathematics and Physics on a first-principle level gave him an
+extrodinary intuition. Feynmans moto was *Don't fool yourself - and
+you are the easiest to fool!*. He also used to *think of concrete
+examples when trying to understand something abstract*.
+
+
+### First Principle Thinking
+
+First principle thinking, i.e. understanding something based
+on the fundamental principles has been shown
+to be much more powerful and lead to better intuition than
+shallower levels of thinking, such as understanding by analogy
+or pattern matching. However, it is also requires expert knowledge
+and is this not possible to do in the beginning.
+
+### Feynman Technique
+
+Young's *Feynman Technique* is an exercise in understanding
+something based on first principles. It consists of two steps:
+
+1. Write a concept or problem on the top of a sheet of paper.
+2. Then write an explanation. For a *concept* explain it to
+    somebody who doesn't know anything about it. For a *problem*
+    explain in detail how a solution works and why.
+
+This can be applied to *things you don't understand*, *problems
+you're stuck on* and to *expand your intuition*.
+
+### How to Build Intuition
+
+1. **Don't give up** on hard problems. When you are about to give
+    up, set a *struggle timer*, to e.g. give yourself anouther ten
+    minutes to work on the problem and stop then.
+2. **Prove or explain** something to understand it. An example is to
+    *draw a bicycle* to understand how it works.
+3. **Use a concrete example** when thinking about an abstract concept
+    or technique.
+4. **Don't fool yourself** into thinking you understand something when
+    you really don't. Ask a lot of questions to make sure your
+    understanding is solid.
 
 
 ## Principle 9: Experimentation
