@@ -291,6 +291,60 @@ There are a few methods we can use to practice retrieval:
 
 ## Principle 6: Feedback
 
+### Positive and Negative Effects of Feedback
+
+Research shows that feedback has overall positive impact, but can also
+have significant negative impact. That is usually the case when it is
+directed (or taken as) to a persons ego, not about the performance. This
+can be hard to separate and feedback is **often hard to take**. However,
+therefore feedback provides a significant competitive advantage. It is
+important to not take feedback as a critique of ones person but of the
+skill.
+
+### Types of Feedback
+
+There are three levels of feedback from least to most granular:
+
+1. **Outcome based feedback:** Gives a single piece of information,
+    e.g. a single grade, pass / fail information. This is the most
+    frequent and easiest to obtain, but also gives the least
+    information
+2. **Informational feedback:** Informational feedback is more
+    detailed than outcome based feedback, basically it is feedback
+    on each line item that contributes to the outcome. On an exam,
+    this could be feedback on each question (vs the whole exam,
+    which would be outcome based).
+3. **Corrective feedback:** This type of feedback not only tells
+    you what went wrong but also how the correct solution looks
+    and why that is the case. This is the hardest type of feedback
+    to get. Its important that it comes from an actual expert,
+    otherwise it might be wrong, misleading and hurtful.
+
+You need to be **careful when trying to upgrade feedback**, because
+the information might not actually be there. For example, if you
+ask people what part of your speech they liked, they might
+(unknowingly) just make something up.
+
+### Ways to Improve Feedback
+
+1. **Noice cancellation:** Remove as much noise from measurements
+    as possible and focus on metrics that more directly tell you
+    what you want to know. E.g. when looking for feedback
+    on the quality of your writing, don't use views as feedback
+    (depends on a wide number of uncontrollable factors) but
+    the rate of people reading a post until the end.
+2. **Difficulty sweet spot:** Feedback is information, and the
+    information content is the highest when it is unpredictable.
+    Optimize the difficulty so that you don't know in advance
+    what kind of feedback you will be getting. Don't make things
+    too easy, but also do not make them impossibly hard.
+3. **Meta feedback:** Meta feedback is feedback on the overall
+    learning process, e.g. monitoring the learrning rate.
+4. **Rapid fire feedback:** Getting lots of feedback early on
+    can be very helpful because (a) it takes away the fear
+    from feedback and (b) **knowing your work will be evaluated
+    is a huge motivator for doing a good job**.
+
 
 ## Principle 7: Retention
 
