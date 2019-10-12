@@ -346,9 +346,53 @@ ask people what part of your speech they liked, they might
     is a huge motivator for doing a good job**.
 
 
-## Principle 7: Retention
+## Principle 7: Retention: Stop Filling a Leaky Bucket
 
-spacing, proceduralization, overlearning, and mnemonics
+Forgetting is a problem when learning. It is a natural process
+and can't be fully prevented, but minimizing its effect on the
+learning effort is important for effective learning.
+
+### Theories About Forgetting
+
+There are three theories about forgetting:
+
+1. **Decay:** Memories just fade over time.
+2. **Inference:** Old memories are (partially) overwritten by
+    newer ones. This is a common phenomenon when a new foreign
+    language (e.g. Spanish) makes it harder to speak an older
+    one (e.g. French).
+3. **Forgotten cues:** The information is still there, but the
+    cue needed to access it is forgotten. This could explain
+    the tip of the tongue problem.
+
+No theory can explain forgetting by themselves completely,
+so they might all be in force to different degrees for different
+memories.
+
+### Ways to Prevent Forgetting
+
+There are four ways presented in how we can slow down or prevent
+forgetting:
+
+1. **Spaced repetition:** Spaced repetition algorithms optimize
+    when to retrieve a certain item in order to not foget this
+    and move it to long term memory. This is especially employed
+    in flash card systems such as Anki.
+2. **Procedularization:** Procedures (e.g. riding a bycicle) are
+    forgotten much more slowly than abstract facts. Another observation
+    on this is "muscle memory" for keyboard shortcuts or passwords.
+    Learning skills to the level where they become automatic procedures
+    is useful in preventing forgetting.
+3. **Overlearning:** Once a small skill or fact is fully learned,
+    learning it more might not improve performance, but it can
+    prevent forgetting. In a way, this might be seen as the early
+    stage of procedularization.
+4. **Mnemonics:** Mnemonic techniques make it easier to remember
+    hard to remember information such as numbers by associating
+    them with easier to remember things such as images or stories.
+    While they clearly work, they can be somewhat brittle and work
+    best for memorizing abstract facts - something that isn't that
+    useful to remember anymore.
 
 
 ## Principle 8: Intuition
