@@ -209,17 +209,68 @@ Some tactics for direct learning:
     perform (e.g. speaking in front of middleschoolers, who pull no punches).
 
 
-## Principle 4: Drill
+## Principle 4: Drill: Attack Your Weakest Point
 
-## Principle 5: Metalearning
+In Chemistry there is the concept of the **rate limiting step**. In a chain
+reaction, the slowest part of the chain determines the speed of the whole
+reaction. Similary when learning a skill, the performance of a certain subskill
+may limit the overall performance. The principle of drill is meant to adress
+this rate limiting step. The goal then, is to identify the sub-skill or
+cognitive component that is the weakest and create drills to improve this
+area.
 
-## Principle 6: Retention
 
-## Principle 7: Metalearning
+### Direct-then-drill
 
-## Principle 8: Metalearning
+This approach is somewhat at odds with the **direct** principle, which states
+to practice the skill directly, minimizing the difference between practice
+and application. Drilling is still needed, because it is easier to improve
+a subskill when focusing on it, and in fact this might be needed to improve
+overall performance. However, it is important that the drill is based on
+observing weaknesses when performing the actual skill, and that the drilled
+subskill is re-integrated into the full skill after drilling. Picking the
+right drill based on direct practice is called the **direct-then-drill**
+approach. Overall, this approach has four steps:
 
-## Principle 9: Metalearning
+1. Practice the skill directly
+2. Find improvable subskill
+3. Drill the subskill
+4. Integrate subskill in drect practice again
+
+
+### Tactics for Drills
+
+1. **Time slicing:** Practice one part of a longer sequence (common in
+    music)
+2. **Cognitive components:** Focus on one cognitive aspect, e.g. grammar
+    or pronounciation when learning a language
+3. **Copying:** Copy other's work then focus only improving the part that
+    you want to drill (e.g. structure of argument in writing).
+4. **Magnifying glass:** While practicing the whole skill, spend more
+    time and concentration on the subcomponent you want to improve, even
+    if that decreases overall performance.
+5. **Prerequisite chaining:** Start learning something that you don't
+    have all the prerequisites for, then cycle back and forth between
+    prerequisites and original learning object.
+
+### Drill Mindfully
+
+Drills are important, but it is very important to be careful that the
+drills actually connect to the real skill. This is the weakness of
+many academic programs, which mostly focus on drilling while the
+drills are disconnected from the actually desired skills.
+
+## Principle 5: Retrieval: Test to Learn
+
+## Principle 6: Feedback
+
+## Principle 7: Retention
+
+spacing, proceduralization, overlearning, and mnemonics
+
+## Principle 8: Intuition
+
+## Principle 9: Experimentation
 
 ## Your First Ultralearning Project
 
