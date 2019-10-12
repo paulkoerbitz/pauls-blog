@@ -260,21 +260,54 @@ drills actually connect to the real skill. This is the weakness of
 many academic programs, which mostly focus on drilling while the
 drills are disconnected from the actually desired skills.
 
+
 ## Principle 5: Retrieval: Test to Learn
 
+Learning works better when trying to retrieve something than by spending
+additonal time to review it or making concept maps. This maybe because
+retrieving information is more difficult than reviewing it, and **difficulty
+is desireable** as long as we are still able to perform the task.
+
+### How to Practice Retrieval
+
+There are a few methods we can use to practice retrieval:
+
+1. **Flash cards:** We can use flash cards, which combines well with a
+    spaced reptetition system (SRS - also see principle 7).
+2. **Free recall:** Difficult but powerful is to practice free recall,
+    i.e. to try to remember as much as possible after learning something.
+    For example, after a lecture we might sit down and write down
+    everything we can recall from that lecture.
+3. **Question book method:** While reading something, write questions
+    instead of notes. Be careful to write the questions at the right
+    (=not too low) level. Later practice retrieval by answering
+    these questions.
+4. **Self-generated challenges:** When learning something, think of
+    challenges where this material can be applied, then apply it.
+5. **Closed-book learning:** Test yourself with the book closed,
+    i.e. force yourself to retrieve when testing or applying your
+    knowledge instead of looking it up.
+
+
 ## Principle 6: Feedback
+
 
 ## Principle 7: Retention
 
 spacing, proceduralization, overlearning, and mnemonics
 
+
 ## Principle 8: Intuition
+
 
 ## Principle 9: Experimentation
 
+
 ## Your First Ultralearning Project
 
+
 ## An Unconventional Education
+
 
 ## Conclusion
 
