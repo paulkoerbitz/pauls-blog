@@ -445,6 +445,57 @@ you're stuck on* and to *expand your intuition*.
 
 ## Principle 9: Experimentation
 
+ True mastery comes not just from following the path trodden
+ by others but from exploring possibilities they haven’t yet
+ imagined - *experimentation is the key to mastery*.
+
+### Story: Van Gogh
+
+This chapter starts with a story about Vincent van Gogh, who started
+painting late in his life and was rejected from art schools. He learned
+painting by experimenting with a lot of different styles, finally finding
+his signature style after many failed attempts.
+
+### Things to Experiment With
+
+1. **Learning resources:** The first place to experiment is with
+    learning resources, methods and learning techniques. Before
+    making changes, make sure that you have really applied
+    yourself to a specific technique.
+
+2. **Different subfields:** Once the basics of a skill have been
+    mastered, there are usually a lot of different things one
+    could learn next.
+
+3. **Style:** Many skills (writing, design, music, leadership, art,
+    ...) don't have a single correct way of doing things. Experiment
+    with different styles to find your own unique style.
+
+### Experimentation Tacticis
+
+There are a number of tactics that can be used for experimentation:
+
+1. **Copy and change:** Copy work, then experiment with changing
+    some aspects of it.
+2. **Vary one variable:** Varying a single dimension while holding
+    everything else constant enables directly comparing the results.
+3. **Add new contraints:** Adding new constraints often sparks
+    creative solutions.
+4. **Combine two skills:** One way to obtain mastery is to not
+    be the best at one skill, but the best at the combination
+    of two, not frequently combined skills (e.g. engineering and
+    public speaking).
+5. **Go to extremes:** In high dimensions, most volume of a spehere
+    is near the surface. This may indicate that in high-dimensional
+    skills, mastry usually involves two extreme sub-skills. Don't
+    expect mastry by taking the safe or average option on everything.
+
+### Learning is experimentation
+
+Experimentation lies at the heart of much of learning. A lot of the
+suggested methods in the book started out as experiments, and there
+were many other experiments that did not work out.
+
 
 ## Your First Ultralearning Project
 
