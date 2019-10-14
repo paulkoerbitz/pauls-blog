@@ -499,10 +499,100 @@ were many other experiments that did not work out.
 
 ## Your First Ultralearning Project
 
+The last chapter aims to be a guide to a first ultralearning project.
+
+### Do Your Research
+
+The first step consists of deciding what to learn, which includes
+finding the learning materials.
+
+1. **Topic and scope:** The topic is obvious, but giving it a good,
+    concrete goal clarifies the next steps a lot. As such *be able
+    to holde a 15 minute conversation on Mandarin* is a much better
+    goal than to *learn Chinese*.
+
+2. **Primary learning materials:** Identify and obtain the primary
+    materials you will be learning with.
+
+3. **Benchmark how others learned:** Find out how others have learned
+    this material and inform your learning plan with it.
+
+4. **Direct practice activities:** How can you directly practice the
+    skill you would like to learn?
+
+5. **Backup material and drills:** What non-primary learning materials
+    which may be used as backup? What possibilities are there to
+    perform drills?
+
+6. **Feedback** How can you get feedback on your learning? Can you
+    improve the type of feedback or the frequency in which you get
+    it? What kind of meta feedback could you collect?
+
+### Schedule Your Time
+
+Find a consistent schedule and put it into your calendar. If you're
+unwilling to do that it is be a sign that your heart is not in the
+project. It is better to have a consistent schedule than to try to
+*find the time when it arises* which typically does not work.
+
+Work should be done in consistent chunks of time. For most activities,
+it is best if these are **not too long** streches (max 1 hour) or are at
+least seperated by breaks. However some activities, such as programming
+have a long ramp up time and thus need some significant streches of time.
+
+### Execute Your Plan
+
+After doing research and scheduling the time, it is time to execute
+the plan. During execution, monitor how you're doing with respect
+to the nine ultralearning principles: metalearning, focus, directness,
+drilling, retrieval, feedback, retention, intuition and experimentation.
+Make adjustments if necessary.
+
+### Review Your Results
+
+After your ultralearning project ends, it is important to review the
+results to improve your approach to your next ultralearning project.
+*What went well?* *What went badly?*
+
+When there are problems, it is tempting to blame a lack of willpower
+or discipline, but often the *problems can be traced to the initial
+plan*.
+
+### Maintain or Master
+
+After completing the ultralearning project, how would you like to
+proceed? The options are to either *maintain* the knowledge through
+less frequent practice, *relearn* at a later point in time or to
+push further and pursue *mastery*.
+
+### Alternatives to Ultralearning
+
+Finally, the book mentions that the intense method of ultralearning
+is not the only way to go. More casual *low intensity methods*, such
+as reading books, keep learning on the job are great ways to keep going.
+*Formal education* also has many benefits.
+
 
 ## An Unconventional Education
+
+The book closes with a discussion of the *Polgar sisters*, the children
+of [Laszlo Polgar][https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_Polg%C3%A1r]
+who had set out to train his children to become geniuses
+and had indeed succeeded in raising three girls who all became
+extrodnary chess players, on of them beating world champion Garry Kasparov
+once. There are many parallels between the ultralearning methods
+presented in the book and the methods used by the Polgar sisters.
 
 
 ## Conclusion
 
+I found the book motivating and thought provoking. I could see many
+of the methods laid out here to be benefitial and the combination of
+them to have an important impact on learning effectiveness. Certainly
+a lot of the success depends on the intensity by which one pursues an
+ultralearning project and the examples in the book are surely the
+positive outliers, but I still believe that much more effective and
+better learning is possible with these methods.
 
+I am looking forward to attempt my first ultralearning project and see
+how these techniques and methods work for me.
