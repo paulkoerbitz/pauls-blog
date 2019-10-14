@@ -9,24 +9,24 @@ draft: true
 ## Stories
 
 The book starts out with a number of stories of ultralearners and ultralearning projects.
-They sound all quite incredible and they really made me excited about the book. I just
-list the ones which I found more interesting.
+They sound all quite incredible and they really made me excited about the book. Here are
+the ones which I found more interesting.
 
 - **MIT CS BS in a year:** The author completed all exams and projects of a bachelor of
     computer science from MIT in one year.
 - **Four languages in one year:** The author stayed in four countries for three months each
-    (Spain, , China, South Korea) learning the language to at least conversational level).
+    (Spain, Brazil, China, South Korea) learning the language to at least conversational level).
 - **Public Speaking Semifinalist:** To test if ultralearning could be learned, the author
-    ran experiments with a number of a number of learners. One of them decided to learn
+    ran experiments with a number of learners. One of them decided to learn
     public speaking and ended up being a public speaking world championship semi-finalist,
-    seven months after starting. This ended up changing his career by becomming a high-paid
+    seven months after starting. This changed his career by becomming a high-paid
     public speaking coach.
 
 ## Ultralearning Principles
 
-Ultralearning cannot vary from subject to subject, thus it cannot simply be broken
-down to tools and tactics, but there are nine principles which embody a universal
-approach to ultralearning:
+The precise techniques of ultralearning can vary from subject to subject,
+thus it cannot simply be broken down to tools and tactics, but there
+are nine principles which embody a universal approach to ultralearning:
 
 1. **Metalearning:** Start by learning how to learn what you want to learn.
 2. **Focus:** Improve concentration during learning.
@@ -39,7 +39,7 @@ approach to ultralearning:
 9. **Experimentation:** True mastery comes not from following a known path but exploring new possibilities.
 
 Finally, the **ethos** behind ultralearning is to be in charge of your learning
-and maximize your return on investment. With this ethos, principles can be
+and **maximize your return on investment**. With this ethos, principles can be
 considered guideposts instead of hard and fast rules.
 
 
@@ -57,18 +57,18 @@ other goal, e.g. advancing in ones career).
 
 Especially with instrumental learning it is key to validate that what you
 want to learn actually helps you what you really want. An example of failing
-at this is getting an MBA to advance in their career only to discover it
+at this is somebody getting an MBA to advance in their career only to discover it
 doesn't help them much after getting it. A good way to prevent this is the
-**expert interview**: find somebody who has what you want (e.g. great career)
-and ask them if they think your approach (e.g. get MBA) is a good one. Best
-do this face-to-face or video chat, not email, to not miss nuances.
+**expert interview**: find somebody who has what you want (e.g. great career in
+your field) and ask them if they think your approach (e.g. get MBA) is a good one.
+Best do this face-to-face or video chat, not email, to not miss nuances.
 
 Expert interviews can also help with *intrinsic* learning goals.
 
 
 ### What
 
-How is the knowledge in your subject structured? Split knowledge in
+How is the knowledge in your subject structured? Split knowledge into
 **concepts** (things that need to be understood), **facts** (things
 that need to be memorized) and **procedures** (things that need to
 be practiced). Then **draw your map** by identifying the most challenging
@@ -79,12 +79,12 @@ time more effective and efficient.
 ### How
 
 First, find the common ways in which people learn what you want to learn,
-this is called **benchmarking**. For anythiing taught at university, a
-**curriculum** or **syllabus** is a first stop, also **list recommended of
+this is called **benchmarking**. For anything taught at university, a
+**curriculum** or **syllabus** is a first stop, also a **list recommended of
 textbooks** might help. Also **finding people who have mastered the skill**
 and performing **expert interviews** should help.
 
-Finding the right material **has very high payoff** as this will be the
+Finding the right material **has a very high payoff** as this will be the
 basis for all learning.
 
 Once benchmarking is done **emphasize** areas that align with your goal
@@ -124,7 +124,7 @@ Procrastination is obviously a problem. Two tips in this book about how
 to handle it (a) start very small, e.g. by working for five minutes on a
 topic, then graduating to pomodoros, etc. and (b) become conscious why
 you're starting to procrastinate, which can be (b-i) because of aversion
-of the task for some reason (what?) and (b-ii) because of attraction to
+of the task for some reason (what exactly?) and (b-ii) because of attraction to
 some other task (what and why?).
 
 ### Problem 2: Failing to Sustain Focus (aka Getting Distracted)
@@ -134,8 +134,8 @@ be too hard for it sometimes. Don't worry too much about it.
 
 **How long** should you practice? Going too long isn't optimal, 50 minutes
 to one hour is best, so if multiple hours for study taking some breaks is
-probably optimal. Also, learning idfferent subjects / aspects during this
-time might be good, but too many different things is not.
+probably optimal. Also, learning different subjects / aspects during this
+time might be good, but learning too many different things is not.
 
 ### Distraction Sources:
 
@@ -143,7 +143,7 @@ time might be good, but too many different things is not.
     noises sounds. Optimize environment to help sustain focus.
 2. **Your task**: Some tasks are easier to focus on, e.g. watching video
     might (or not?) be easier to focus on than reading. If something is more
-    cognitive demanding, than it is generally easier to focus on.
+    cognitive demanding, then it is generally easier to focus on.
 3. **Your mind**: Can generate a lot of distractions, especially if it is
     filled with strong emotions. Major life crisis can make focus a lot
     harder, so dealing with these things first might be better.
@@ -174,8 +174,8 @@ Procrastination Equation.
 It has been shown many times, initially by Edward Thorndike and
 Robert Woodworth in 1901 (*"The Influence of Improvement in One
 Mental Function upon the Efficiency of Other Functions"*) that
-transfer from one learned skill is problematic and often does not
-ocurr anywhere near the degree that people hope.
+transfer from one learned skill to other skills is problematic
+and often does not ocurr to anywhere near the degree that people hope.
 
 ### Overcoming the Problem of Transfer with Directness
 
@@ -203,7 +203,7 @@ Some tactics for direct learning:
     more widely.
 3. **Flight simulator method**: When practicing the skill is not possible
     directly (flying, surgery, ...), a simulation which requires the same
-    cognitive skills (decisions, use knowledge).
+    cognitive skills (decisions, use knowledge) is the best alternative.
 4. **The overkill approach**: Increase the difficulty of the challenge by
     creating more intense versions of the taks than you actually want to
     perform (e.g. speaking in front of middleschoolers, who pull no punches).
@@ -222,7 +222,7 @@ area.
 
 ### Direct-then-drill
 
-This approach is somewhat at odds with the **direct** principle, which states
+Drilling is somewhat at odds with the **direct** principle, which states
 to practice the skill directly, minimizing the difference between practice
 and application. Drilling is still needed, because it is easier to improve
 a subskill when focusing on it, and in fact this might be needed to improve
@@ -233,9 +233,9 @@ right drill based on direct practice is called the **direct-then-drill**
 approach. Overall, this approach has four steps:
 
 1. Practice the skill directly
-2. Find improvable subskill
+2. Find an improvable subskill
 3. Drill the subskill
-4. Integrate subskill in drect practice again
+4. Integrate the subskill into the direct practice again
 
 
 ### Tactics for Drills
@@ -263,16 +263,16 @@ drills are disconnected from the actually desired skills.
 
 ## Principle 5: Retrieval: Test to Learn
 
-Learning works better when trying to retrieve something than by spending
-additonal time to review it or making concept maps. This maybe because
+Learning works better when trying to retrieve something than spending
+additonal time to review it. This maybe because
 retrieving information is more difficult than reviewing it, and **difficulty
-is desireable** as long as we are still able to perform the task.
+is desireable in learning** as long as we are still able to perform the task.
 
 ### How to Practice Retrieval
 
 There are a few methods we can use to practice retrieval:
 
-1. **Flash cards:** We can use flash cards, which combines well with a
+1. **Flash cards:** We can use flash cards, which combines well with
     spaced reptetition system (SRS - also see principle 7).
 2. **Free recall:** Difficult but powerful is to practice free recall,
     i.e. to try to remember as much as possible after learning something.
@@ -293,11 +293,11 @@ There are a few methods we can use to practice retrieval:
 
 ### Positive and Negative Effects of Feedback
 
-Research shows that feedback has overall positive impact, but can also
-have significant negative impact. That is usually the case when it is
-directed (or taken as) to a persons ego, not about the performance. This
-can be hard to separate and feedback is **often hard to take**. However,
-therefore feedback provides a significant competitive advantage. It is
+Research shows that feedback has overall positive impact on learning,
+but can also have significant negative effect. Negative effects usually ocurr
+when feedback is (taken to be) directed at a persons ego, not the skill.
+This can be hard to separate and feedback is **often hard to take**. However,
+for this reason **feedback provides a significant competitive advantage**. It is
 important to not take feedback as a critique of ones person but of the
 skill.
 
@@ -321,16 +321,14 @@ There are three levels of feedback from least to most granular:
     otherwise it might be wrong, misleading and hurtful.
 
 You need to be **careful when trying to upgrade feedback**, because
-the information might not actually be there. For example, if you
-ask people what part of your speech they liked, they might
-(unknowingly) just make something up.
+the information might not actually be there.
 
 ### Ways to Improve Feedback
 
 1. **Noice cancellation:** Remove as much noise from measurements
     as possible and focus on metrics that more directly tell you
     what you want to know. E.g. when looking for feedback
-    on the quality of your writing, don't use views as feedback
+    on the quality of your blog posts, don't use views as feedback
     (depends on a wide number of uncontrollable factors) but
     the rate of people reading a post until the end.
 2. **Difficulty sweet spot:** Feedback is information, and the
@@ -358,14 +356,14 @@ There are three theories about forgetting:
 
 1. **Decay:** Memories just fade over time.
 2. **Inference:** Old memories are (partially) overwritten by
-    newer ones. This is a common phenomenon when a new foreign
-    language (e.g. Spanish) makes it harder to speak an older
+    newer ones. This is a common phenomenon when learning a new
+    foreign language (e.g. Spanish) makes it harder to speak an older
     one (e.g. French).
 3. **Forgotten cues:** The information is still there, but the
     cue needed to access it is forgotten. This could explain
     the tip of the tongue problem.
 
-No theory can explain forgetting by themselves completely,
+No theory can explain forgetting by itself completely,
 so they might all be in force to different degrees for different
 memories.
 
@@ -376,11 +374,11 @@ forgetting:
 
 1. **Spaced repetition:** Spaced repetition algorithms optimize
     when to retrieve a certain item in order to not foget this
-    and move it to long term memory. This is especially employed
+    and move it to long term memory. This is used
     in flash card systems such as Anki.
 2. **Procedularization:** Procedures (e.g. riding a bycicle) are
-    forgotten much more slowly than abstract facts. Another observation
-    on this is "muscle memory" for keyboard shortcuts or passwords.
+    forgotten much more slowly than abstract facts. Another case is
+    "muscle memory" for keyboard shortcuts or passwords.
     Learning skills to the level where they become automatic procedures
     is useful in preventing forgetting.
 3. **Overlearning:** Once a small skill or fact is fully learned,
@@ -432,10 +430,10 @@ you're stuck on* and to *expand your intuition*.
 ### How to Build Intuition
 
 1. **Don't give up** on hard problems. When you are about to give
-    up, set a *struggle timer*, to e.g. give yourself anouther ten
+    up, set a *struggle timer*, to e.g. give yourself another ten
     minutes to work on the problem and stop then.
 2. **Prove or explain** something to understand it. An example is to
-    *draw a bicycle* to understand how it works.
+    *draw a bicycle* to explain how it works.
 3. **Use a concrete example** when thinking about an abstract concept
     or technique.
 4. **Don't fool yourself** into thinking you understand something when
@@ -445,8 +443,8 @@ you're stuck on* and to *expand your intuition*.
 
 ## Principle 9: Experimentation
 
- True mastery comes not just from following the path trodden
- by others but from exploring possibilities they haven’t yet
+ True mastery comes not from following the path trodden
+ by others, but from exploring possibilities they haven’t yet
  imagined - *experimentation is the key to mastery*.
 
 ### Story: Van Gogh
@@ -499,7 +497,7 @@ were many other experiments that did not work out.
 
 ## Your First Ultralearning Project
 
-The last chapter aims to be a guide to a first ultralearning project.
+This chapter aims to be a guide to a first ultralearning project.
 
 ### Do Your Research
 
@@ -508,7 +506,7 @@ finding the learning materials.
 
 1. **Topic and scope:** The topic is obvious, but giving it a good,
     concrete goal clarifies the next steps a lot. As such *be able
-    to holde a 15 minute conversation on Mandarin* is a much better
+    to hold a 15 minute conversation in Mandarin* is a much better
     goal than to *learn Chinese*.
 
 2. **Primary learning materials:** Identify and obtain the primary
@@ -576,10 +574,10 @@ as reading books, keep learning on the job are great ways to keep going.
 ## An Unconventional Education
 
 The book closes with a discussion of the *Polgar sisters*, the children
-of [Laszlo Polgar][https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_Polg%C3%A1r]
+of [Laszlo Polgar](https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_Polg%C3%A1r)
 who had set out to train his children to become geniuses
 and had indeed succeeded in raising three girls who all became
-extrodnary chess players, on of them beating world champion Garry Kasparov
+extrodnary chess players, one of them beating world champion Garry Kasparov
 once. There are many parallels between the ultralearning methods
 presented in the book and the methods used by the Polgar sisters.
 
