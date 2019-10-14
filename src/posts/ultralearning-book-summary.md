@@ -2,8 +2,7 @@
 title: Ultralearning
 summary: My book summary of "Ultralearning"
 author: Paul Koerbitz <paul@koerbitz.me>
-date: 2019-09-29
-draft: true
+date: 2019-10-14
 ---
 
 ## Stories
