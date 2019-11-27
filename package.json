@@ -2,7 +2,7 @@
   "name": "static-site-example",
   "private": true,
   "dependencies": {
-    "handlebars": "^4.0.5",
+    "handlebars": "^4.5.3",
     "marked": "0.3.9",
     "metalsmith": "^2.1.0",
     "metalsmith-code-highlight": "^1.1.0",
