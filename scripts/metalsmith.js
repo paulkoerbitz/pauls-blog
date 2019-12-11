@@ -37,7 +37,8 @@ const ms = Metalsmith(__dirname)
         directory: './hbs-helpers'
     }))
     .use(fixLayout([
-        [/^posts\/.*/, 'post.html']
+        [/^posts\/.*/, 'post.html'],
+        [/^notes\/.*/, 'post.html']
     ]))
     .use(removeDrafts)
     .use(markdown())
@@ -53,7 +54,12 @@ const ms = Metalsmith(__dirname)
             order: 'date',
             reverse: true,
             limit: 10
-        }
+        },
+        notes: {
+            pattern: '*notes/*',
+            order: 'date',
+            reverse: true,
+        },
     }))
     .use(layouts({
         engine: 'handlebars',
