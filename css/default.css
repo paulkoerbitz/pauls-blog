@@ -45,8 +45,10 @@ h1 + p.date                     { margin-top: -25px; }
 /* paragraph justification */
 p { text-align: justify; }
 
+img { max-width: 100%; }
+
 /* code formatting.  no monospace because of webkit (bug?) */
-pre, { padding: 5px; }
+pre { padding: 5px; }
 pre, code, tt   { font-family: 'Ubuntu Mono', 'Consolas', 'Deja Vu Sans Mono',
                   'Bitstream Vera Sans Mono', 'Monaco', 'Courier New';
                   /*font-size: 1.0m;*/
