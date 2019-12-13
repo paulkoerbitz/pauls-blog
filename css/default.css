@@ -34,6 +34,23 @@ div.footer                  { border-top: 1px solid #555; padding-top: 9px;
                               text-align: center; color: #555; }
 div.footer p                { margin: 0; }
 
+blockquote {
+    background: #ddd;
+    font-style: italic;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0 0.5em;
+    border-radius: 5px;
+}
+
+blockquote:first-child {
+    margin-top: 5px;
+}
+
+blockquote:first-child {
+    margin-bottom: 5px;
+}
+
 /* margins and stuff */
 p, div.line-block, ul, ol, pre,
     table                       { margin: 15px 0 15px 0; }
