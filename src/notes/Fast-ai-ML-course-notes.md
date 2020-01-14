@@ -271,31 +271,31 @@ equivalent to [logistic regression][log-reg]. Focusing on binary logistic
 retression, we're trying to predict two classes, \\(0\\) and \\(1\\):
 
 \\[
-    \begin{align\*}
+    \begin{aligned}
     P(Y=1|X;\theta) &&=h_\theta(x) &= \frac{1}{1+\exp(-\theta^Tx)} \\\\
     P(Y=0|X;\theta) &= 1 - P(Y=1|X;\theta) &=1-h_\theta(x) &= \frac{\exp(-\theta^Tx)}{1+\exp(-\theta^Tx)},
-    \end{align\*}
+    \end{aligned}
 \\]
 
 where \\(\theta^Tx = w^Tx + b\\). Given observations \\((x,y)\\), we find
 the best parameters \\(\theta\\), by maximizing the likelhood function
 
 \\[
-    \begin{align\*}
+    \begin{aligned}
     L(\theta|x) &= P(y|x;\theta) \\\\
                 &= \prod_i P(y_i|x_i;\theta) \\\\
                 &= \prod_i h_\theta(x_i)^{y_i}(1-h_\theta(x_i))^{1-y_i} \\\\
-    \end{align\*}
+    \end{aligned}
 \\]
 
 This is equivalent to minimizing the negative log-likelihood function
 
 \\[
-    \begin{align\*}
+    \begin{aligned}
     -\log(L(\theta|x)) &= -\log(P(y|x;\theta)) \\\\
                 &= -\sum_i \log(h_\theta(x_i)^{y_i}(1-h_\theta(x_i))^{1-y_i}) \\\\
                 &= \sum_i -y_i\log(h_\theta(x_i)) - (1-y_i)\log(1-h_\theta(x_i))\\\\
-    \end{align\*}
+    \end{aligned}
 \\]
 
 In the neural net, we have the linear layer \\(w^Tx + b\\) followed by
@@ -513,10 +513,10 @@ at how Naive Bayes classification works. We want to know the probility of the
 two classes given a set of words in a document \\(\vec{w}=(w_1,\ldots,w_n)\\):
 
 \\[
-    \begin{align\*}
+    \begin{aligned}
     P(1|\vec{w}) &= P(1|w_1,\ldots,w_n) \\\\
     P(0|\vec{w}) &= P(0|w_1,\ldots,w_n)
-    \end{align\*}
+    \end{aligned}
 \\]
 
 and we will predict the class of whichever probability is greater, so \\(1\\) if
@@ -572,7 +572,7 @@ where the probabilities are replaced by the relative number
 of documents:
 
 \\[
-    \begin{align\*}
+    \begin{aligned}
     P(1) & \approx \frac{\\#\text{positive documents}}{\\#\text{all documents}} \\\\
     P(0) & \approx \frac{\\#\text{negative documents}}{\\#\text{all documents}} \\\\
     b & = \log\frac{\\#\text{positive documents}}{\\#\text{negative documents}} \\\\
@@ -580,7 +580,7 @@ of documents:
                 {\frac{\\#\text{positive documents}}{\\#\text{all documents}}}
                 {\frac{\\#\text{negative documents}}{\\#\text{all documents}}} \\\\
       & \approx \log\frac{P(1)}{P(0)}
-    \end{align\*}
+    \end{aligned}
 \\]
 
 and the items from the first part \\(\log \frac{P(w_1|1)}{P(w_1|0)}\\)
