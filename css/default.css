@@ -33,6 +33,9 @@ div.footer                  { border-top: 1px solid #555; padding-top: 9px;
                               margin-top: 42px; font-size: 16px;
                               text-align: center; color: #555; }
 div.footer p                { margin: 0; }
+div.mermaid                 { text-align: center; color: transparent; } 
+div.mermaid > svg           { max-width: 100%; }
+div.center                  { text-align: center; }
 
 blockquote {
     background: #ddd;
@@ -61,6 +64,7 @@ li                              { padding: 0; }
 h1 + p.date                     { margin-top: -25px; }
 /* paragraph justification */
 p { text-align: justify; }
+p strong { font-weight: bold; }
 
 img { max-width: 100%; }
 
