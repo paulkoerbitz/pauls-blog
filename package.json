@@ -3,7 +3,7 @@
   "private": true,
   "dependencies": {
     "handlebars": "^4.5.3",
-    "marked": "0.3.9",
+    "marked": "0.3.18",
     "metalsmith": "^2.1.0",
     "metalsmith-code-highlight": "^1.1.0",
     "metalsmith-collections": "^0.9.0",
