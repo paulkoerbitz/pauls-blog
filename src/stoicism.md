@@ -1,3 +1,8 @@
+---
+title: Stoicism Cheat Sheet
+layout: layout.html
+---
+
 # My Stoicism Cheat Sheet
 
 Stoicism has been a useful philosphy of life to me. It helps me overcome anxiety, focus on what's within my control, be a better person and attain tranquility and joy. This is my brief summary.
@@ -62,7 +67,7 @@ Don't. What about this is within your control? Do something about that. What is 
 
 ## References
 
-* A Guide to the Good Life: The Ancient Art of Stoic Joy by William B. Irvine  
-* Breakfast with Seneca  
-* The little book on stoicism  
+* A Guide to the Good Life: The Ancient Art of Stoic Joy by William B. Irvine
+* Breakfast with Seneca
+* The little book on stoicism
 * Mr. Money Mustaches blogpost on stoicism.
